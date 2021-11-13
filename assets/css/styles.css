@@ -9,13 +9,52 @@ body{
   height: 700px;
 }
 
+/* left pane----------------------------------- */
+
 .left-pane{
 background-color: #1dbf74;
 height: 700px;
+display: flex;
+flex-direction: column;
 }
 
 .heading{
-  margin-top: 10px;
-  font-family: 'Comfortaa', cursive;
-  font-size: 30px;
+  margin: 5px 0px 0px 0px;
+  font-family: 'Gruppo', cursive;
+  font-size: 20px;
+  background-color: orange;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.img-left{
+  margin-top: 40%;
+  max-height: 110px;
+  max-width: 150px;
+}
+
+.social-icons{
+  list-style: none;
+}
+
+.social-icons li{
+  float: right;
+  padding: 5px;
+}
+
+.social-icons li a{
+  text-decoration: none;
+  color: #efefef;
+}
+
+.descript{
+  margin-top: 20%;
+  font-size: small;
+  max-width: 300px;
+}
+
+.copy-r{
+  margin-top: 50%;
+  font-size: 11px;
+  color: #d1d3d8;
 }
