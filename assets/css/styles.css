@@ -28,9 +28,9 @@ flex-direction: column;
 }
 
 .img-left{
-  margin-top: 40%;
-  max-height: 110px;
-  max-width: 150px;
+  margin-top: 30%;
+  max-height: auto;
+  max-width: 100%;
 }
 
 .social-icons{
@@ -48,13 +48,21 @@ flex-direction: column;
 }
 
 .descript{
-  margin-top: 20%;
+  margin-top: 50px;
   font-size: small;
   max-width: 300px;
 }
 
 .copy-r{
-  margin-top: 50%;
+  margin-top: 70px;
   font-size: 11px;
   color: #d1d3d8;
+}
+
+ .line{
+  margin: 20px 10px 0px 10px;
+  height: 2px;
+  background-color: white;
+  border: 1px solid white;
+  /* max-width: 300px; */
 }
