@@ -1,0 +1,21 @@
+body{
+  background-color: #efefef;
+}
+
+#root-cont{
+  margin-top: 5%;
+  /* background-color: green; */
+  box-shadow: 0px 1px 10px #aeafb1, 0px -1px 10px #aeafb1;
+  height: 700px;
+}
+
+.left-pane{
+background-color: #1dbf74;
+height: 700px;
+}
+
+.heading{
+  margin-top: 10px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 30px;
+}
