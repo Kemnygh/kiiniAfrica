@@ -5,7 +5,7 @@ body{
 #root-cont{
   margin-top: 5%;
   /* background-color: green; */
-  box-shadow: 0px 1px 10px #aeafb1, 0px -1px 10px #aeafb1;
+  box-shadow: 0px 0px 10px #aeafb1, 0px 0px 10px #aeafb1;
   height: 700px;
 }
 
@@ -65,4 +65,19 @@ flex-direction: column;
   background-color: white;
   border: 1px solid white;
   /* max-width: 300px; */
+}
+
+
+/* right pane----------------------------------- */
+
+.right-pane{
+  /* border: 1px solid #c2bfbf; */
+  /* box-shadow: 0px 1px 10px #aeafb1, 0px -1px 10px #aeafb1 */
+
+}
+.inner-box{
+  max-width: 720px;
+  height: 600px;
+  /* border: 1px solid #1dbf74; */
+  margin-top: 30px;
 }
