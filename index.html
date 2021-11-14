@@ -16,7 +16,7 @@
 <body>
   <div id="root-cont" class="container">
     <div class="row">
-      <div class="col-md-4 left-pane">
+      <div class="col-lg-4 left-pane">
         <div class="row">
           <div class="col ms-0">
             <p class="text-dark text-center heading">KiiniAfrica</p>
@@ -38,13 +38,19 @@
         </p>
         <p class="text-center mx-auto copy-r">&copy; 2021 KiiniAfrica</p>
       </div>
-      <div class="col-md-8 right-pane">
+      <div class="col-lg-8 right-pane">
         <div class="row">
-          <div id="main-left" class="col">
-            <div class="row d-flex justify-content-between" birthdate">
-              <input class="col-md-3" type="text">
-              <input class="col-md-3" type="text">
-              <input class="col-md-4" type="text">
+          <div id="main-left" class="col-lg-6">
+            <div class="row birthdate">
+              <div class="input-group input-group-sm">
+                <span class="input-group-text span-text">Day</span>
+                <input type="text" aria-label="First name" class="form-control" placeholder="01"/>
+                <span class="input-group-text span-text">Month</span>
+                <input type="text" aria-label="Last name" class="form-control" placeholder="01"/>
+                <span class="input-group-text span-text">Year</span>
+                <input type="text" aria-label="Last name" class="form-control" placeholder="1900"/>
+              </div>
+              
             </div>
             <div class="row gender">
               <div class="col form-check">
@@ -65,9 +71,14 @@
                 </label>
               </div>
             </div>
+            <button type="button" class="btn btn-warning btn-sm mt-3 ms-3">Submit</button>
+            <div id="img-box"></div>
             <!-- <img src="./assets/images/male.g.png" alt=""> -->
           </div>
-          <div id="main-right" class="col">
+          <div id="main-right" class="col-lg-6">
+            <div class="d-flex vertical-line">
+              <div class="vr"></div>
+            </div>
 
           </div>
         </div>

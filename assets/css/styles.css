@@ -71,13 +71,36 @@ flex-direction: column;
 /* right pane----------------------------------- */
 
 .right-pane{
-  /* border: 1px solid #c2bfbf; */
-  /* box-shadow: 0px 1px 10px #aeafb1, 0px -1px 10px #aeafb1 */
+  background-color: white;
 
 }
-.inner-box{
-  max-width: 720px;
-  height: 600px;
-  /* border: 1px solid #1dbf74; */
-  margin-top: 30px;
+
+.birthdate{
+  flex-direction: row;
+  margin: 70px 0px 0px 0px;
+}
+
+.span-text{
+  background-color: #1dbf74;
+  border-color: #1dbf74 ;
+  color: white;
+  font-size: smaller !important;
+}
+
+.gender{
+  margin: 20px 0px 0px 12px;
+}
+
+#img-box{
+  align-items: center;
+}
+
+.vertical-line{
+  height: 550px;
+  margin-top: 70px;
+}
+
+input::placeholder {
+  color: red;
+  font-style: italic;
 }
