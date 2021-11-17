@@ -19,6 +19,6 @@ ma_icon.addEventListener('click',function(event){
 })
 
 m_image.style.marginTop = "50px";
-m_image.style.marginLeft = "5%";
+m_image.style.marginBottom = "50px";
 m_image.style.maxWidth = "100%";
 m_image.style.maxHeight = "300px";

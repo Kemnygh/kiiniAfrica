@@ -65,14 +65,6 @@ margin-top: 10px
   color: #d1d3d8;
 }
 
- .line{
-  margin: 20px 10px 0px 10px;
-  height: 2px;
-  background-color: white;
-  border: 1px solid white;
-  /* max-width: 300px; */
-}
-
 
 /* right pane----------------------------------- */
 
@@ -98,7 +90,9 @@ margin-top: 10px
 }
 
 #img-box{
-  align-items: center;
+  margin-top: 20px;
+  border: 1px solid #1dbf74;
+  border-radius: 10px;
 }
 
 .vertical-line{
