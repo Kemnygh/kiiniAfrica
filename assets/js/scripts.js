@@ -1,5 +1,6 @@
 // prompt("name")
 genderImage()
+coverImage()
 
 function genderImage(){
 var imageparent = document.querySelector("#img-box");
@@ -26,6 +27,7 @@ m_image.style.maxWidth = "100%";
 m_image.style.maxHeight = "272px";
 }
 
+function coverImage(){
 var secondimage = document.querySelector("#main-right");
 var pictureController = document.createElement('div');
 secondimage.appendChild(pictureController);
@@ -50,10 +52,12 @@ contentController.classList.add("hide")
 var submitButton = document.querySelector(".btn");
 
 submitButton.addEventListener('click', function(event){
-  console.log("I have been clicked")
   contentController.classList.remove("hide")
   pictureController.classList.add("hide")
 })
+}
+
+
 
 
 

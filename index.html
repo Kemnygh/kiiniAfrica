@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Gruppo&display=swap" rel="stylesheet"/>
   <script src="./assets/js/scripts.js" defer></script>
+  <script src="./assets/js/data.js" defer></script>
+  
 </head>
 <body>
   <div id="root-cont" class="container">
@@ -45,14 +47,15 @@
             <div class="row birthdate">
               <div class="input-group input-group-sm">
                 <span class="input-group-text span-text">Day</span>
-                <input type="text" aria-label="First name" class="form-control" placeholder="01"/>
+                <input type="text" aria-label="Day" class="form-control day" placeholder="01" value=""/>
                 <span class="input-group-text span-text">Month</span>
-                <input type="text" aria-label="Last name" class="form-control" placeholder="01"/>
+                <input type="text" aria-label="Month" class="form-control month" placeholder="01"/>
                 <span class="input-group-text span-text">Year</span>
-                <input type="text" aria-label="Last name" class="form-control" placeholder="1900"/>
+                <input type="text" aria-label="Year" class="form-control year" placeholder="1900"/>
               </div>
               
             </div>
+            <div class="row alerts"><p id="alert-day" class="col"></p><p id="alert-month" class="col"></p><p id="alert-year" class="col"></p></div>
             <div class="row gender">
               <div class="col form-check">
                 <input class="form-check-input fe-icon" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -72,7 +75,7 @@
                 </label>
               </div>
             </div>
-            <button type="button" class="btn btn-warning btn-sm mt-3 ms-3">Submit</button>
+            <button type="button" class="btn btn-warning btn-sm mt-3 ms-3" ">Submit</button>
             <div id="img-box" class="d-flex justify-content-center"></div>
             <!-- <img src="./assets/images/male.g.png" alt=""> -->
           </div>
@@ -96,6 +99,5 @@
       </div>
     </div>
   </div>
-  
 </body>
 </html>
