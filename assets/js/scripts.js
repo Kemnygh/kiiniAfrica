@@ -26,6 +26,27 @@ m_image.style.maxWidth = "100%";
 m_image.style.maxHeight = "300px";
 }
 
-var contentContoller = document.querySelector("#content-box")
+var secondimage = document.querySelector("#main-right");
+var pictureController = document.createElement('div');
+secondimage.appendChild(pictureController);
+var cover_image = document.createElement('img');
+pictureController.appendChild(cover_image);
+var c_img = cover_image.src = "./assets/images/cover-img.png";
 
-// contentContoller.classList.add("hide")
+var contentController = document.querySelector("#content-box");
+contentController.classList.add("hide")
+
+
+
+var submitButton = document.querySelector(".btn");
+
+submitButton.addEventListener('click', function(event){
+  console.log("I have been clicked")
+  contentController.classList.remove("hide")
+  pictureController.classList.add("hide")
+})
+
+
+
+
+
