@@ -1,5 +1,7 @@
 // prompt("name")
+genderImage()
 
+function genderImage(){
 var imageparent = document.querySelector("#img-box");
 var m_image = document.createElement('img');
 imageparent.appendChild(m_image);
@@ -22,3 +24,8 @@ m_image.style.marginTop = "50px";
 m_image.style.marginBottom = "50px";
 m_image.style.maxWidth = "100%";
 m_image.style.maxHeight = "300px";
+}
+
+var contentContoller = document.querySelector("#content-box")
+
+// contentContoller.classList.add("hide")

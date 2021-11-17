@@ -104,3 +104,26 @@ input::placeholder {
   font-size: 10px;
   font-style: italic;
 }
+
+#content-box{
+  margin-top: 65px;
+}
+
+.name-tag{
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(107, 105, 105);
+}
+
+.name-tag span{
+  color: #1dbf74;
+}
+
+.hide{
+  display: none;
+}
+
+.day-tag{
+  color: #1dbf74;
+  font-weight: bold;
+}
