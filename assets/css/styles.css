@@ -107,6 +107,7 @@ input::placeholder {
 
 #content-box{
   margin-top: 65px;
+  margin-right: 15px;
 }
 
 .name-tag{
@@ -126,4 +127,18 @@ input::placeholder {
 .day-tag{
   color: #1dbf74;
   font-weight: bold;
+}
+
+.title-m-tag{
+  font-size: 13px;
+  color: grey;
+}
+
+.meaning-tag{
+  text-align: justify;
+}
+
+.adopted-tag{
+  font-size: 14px;
+  color: grey;
 }
