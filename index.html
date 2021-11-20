@@ -8,11 +8,9 @@
   <link rel="stylesheet" href="./assets/css/bootstrap.css"/>
   <link rel="stylesheet" href="./assets/icons/bootstrapicons/bootstrap-icons.css" media="all"/>
   <link rel="stylesheet" href="./assets/css/styles.css" media="all"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Gruppo&display=swap" rel="stylesheet"/>
   <script src="./assets/js/scripts.js" defer></script>
-  <script src="./assets/js/data.js" defer></script>
+  <!-- <script src="./assets/js/data.js" defer></script> -->
   
 </head>
 <body>
@@ -43,42 +41,37 @@
       </div>
       <div class="col-lg-8 right-pane">
         <div class="row main-row">
-          <div id="main-left" class="col-lg-6">
+          <form id="main-left" class="col-lg-6">
             <div class="row birthdate">
               <div class="input-group input-group-sm">
                 <span class="input-group-text span-text">Day</span>
-                <input type="text" aria-label="Day" class="form-control day" placeholder="01" value=""/>
+                <input id="day" type="text" aria-label="Day" class="form-control day-class" placeholder="01" value=""/>
                 <span class="input-group-text span-text">Month</span>
-                <input type="text" aria-label="Month" class="form-control month" placeholder="01"/>
+                <input id="month" type="text" aria-label="Month" class="form-control month-class" placeholder="01" value=""/>
                 <span class="input-group-text span-text">Year</span>
-                <input type="text" aria-label="Year" class="form-control year" placeholder="1900"/>
+                <input id="year" type="text" aria-label="Year" class="form-control year-class" placeholder="1900" value=""/>
               </div>
-              
             </div>
-            <div class="row alerts"><p id="alert-day" class="col"></p><p id="alert-month" class="col"></p><p id="alert-year" class="col"></p></div>
-            <div class="row gender">
+            <div id="error-msg" class="row alerts"><p id="alert-day" class="col error"></p><p id="alert-month" class="col error"></p><p id="alert-year" class="col error"></p></div>
+            <div id = "gender" class="row gender-class">
               <div class="col form-check">
-                <input class="form-check-input fe-icon" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input fe-icon gnd" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="female">
                 <label class="form-check-label" for="flexRadioDefault1">
                   Female
                 </label>
               </div>
               <div class="col form-check">
-                <input class="form-check-input ma-icon" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input ma-icon gnd" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="male">
                 <label class="form-check-label" for="flexRadioDefault2">
                   Male
                 </label>
               </div>
-              <div class="col form-check">
-                <input class="form-check-input invisible" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
-                <label class="form-check-label" for="flexRadioDefault3">
-                </label>
-              </div>
             </div>
-            <button type="button" class="btn btn-warning btn-sm mt-3 ms-3" ">Submit</button>
+            <p id="alert-radio" class="error"></p>
+            <button id="submit" type="submit" class="btn btn-warning btn-sm mt-3 ms-3" ">Submit</button>
             <div id="img-box" class="d-flex justify-content-center"></div>
             <!-- <img src="./assets/images/male.g.png" alt=""> -->
-          </div>
+          </form>
           <div id="main-right" class="col-lg-6">
             <!-- <div class="d-flex vertical-line">
               <div class="vr"></div>
@@ -86,7 +79,7 @@
             </div> -->
             <div id="content-box">
               <p class="intro-tag">You were born on a <em><span class="day-tag">TUESDAY</span></em>, your Akan Name would be:</p>
-              <p class="name-tag text-center">Kwabena <span><i class="bi bi-check2-circle"></span></i></p>
+              <p class="name-tag text-center">Kwabena <span><i class="bi bi-check2-circle"></i></span></p>
               <p class="title-m-tag"><em>Meaning of the name:</em></p>
               <p class="meaning-tag">Kwasi is used to depict the day God descended, the day God began to create. Essentially, 
                 the name marks the creating prowess of God, the beginning of it all!

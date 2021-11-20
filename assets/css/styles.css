@@ -91,7 +91,7 @@ margin-top: 10px
   font-size: smaller !important;
 }
 
-.gender{
+.gender-class{
   margin: 20px 0px 0px 12px;
 }
 
@@ -149,4 +149,28 @@ input::placeholder {
 .adopted-tag{
   font-size: 14px;
   color: grey;
+}
+
+#alert-day, #alert-month, #alert-year, #alert-radio{
+color: red;
+font-size: 10px;
+/* margin-left: 30px; */
+margin-bottom: 0px;
+padding: 0px;
+}
+
+#alert-day{
+  margin-left: 24px;
+}
+
+#alert-radio{
+  margin-left: 15px;
+}
+
+#alert-month, #alert-year{
+  margin-left: -24px;
+}
+
+.hide2{
+  visibility: none;
 }
