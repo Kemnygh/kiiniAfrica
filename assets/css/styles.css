@@ -124,8 +124,10 @@ input::placeholder {
   color: rgb(107, 105, 105);
 }
 
-.name-tag span{
+.bi-check2-circle{
   color: #1dbf74;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .hide{
@@ -134,6 +136,16 @@ input::placeholder {
 
 .day-tag{
   color: #1dbf74;
+  font-weight: bold;
+  
+}
+
+.dayAkanIntro{
+  font-size: 10px;
+  color: gray;
+}
+
+.dayAkan{
   font-weight: bold;
 }
 

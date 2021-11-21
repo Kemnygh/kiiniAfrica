@@ -9,8 +9,8 @@ var imageparent = document.querySelector("#img-box");
 var m_image = document.createElement('img');
 imageparent.appendChild(m_image);
 m_image.classList.add("gnd-img")
-// var femaleIcon = m_image.src = "./assets/images/female.g.png";
- m_image.src = "./assets/images/neutral.g.png";
+
+m_image.src = "./assets/images/neutral.g.png";
 
 var fe_icon = document.querySelector(".fe-icon")
 var ma_icon = document.querySelector(".ma-icon")
@@ -34,17 +34,15 @@ var secondimage = document.querySelector("#main-right");
 var pictureController = document.createElement('div');
 secondimage.appendChild(pictureController);
 var cover_image = document.createElement('img');
-// var spanTitle = document.createElement("p");
 var mainTitle = document.createElement("p");
 pictureController.appendChild(cover_image);
-// pictureController.appendChild(spanTitle);
 pictureController.appendChild(mainTitle);
 
 
 
 var c_img = cover_image.src = "./assets/images/cover-img.png";
 var text_input = mainTitle.textContent = "Welcome to the Akan Names App enter your birthdate, choose gender and submit to see what could be your akan name."
-// spanTitle.textContent = "welcome to the"
+
 
 
 pictureController.style.marginTop = "40px";
@@ -63,21 +61,16 @@ mainTitle.style.marginRight = "20px";
 mainTitle.style.color = "#1dbf74";
 mainTitle.style.textAlign = "center";
 mainTitle.style.fontWeight = "bold";
-// spanTitle.style.position = "absolute";
-// spanTitle.style.top = "50%";
-// spanTitle.style.left = "10%";
-// mainTitle.style.fontSize = "30px";
 
 var contentController = document.querySelector("#content-box");
-contentController.classList.add("hide")
+contentController.classList.add("hide");
 
 
 
 var submitButton = document.querySelector(".btn");
 
 submitButton.addEventListener('click', function(event){
-  contentController.classList.remove("hide")
-  pictureController.classList.add("hide")
+  
 })
 
 
@@ -94,29 +87,55 @@ submitButton.addEventListener('click', function(event){
     gender = id("gender"),
     female = id("flexRadioDefault1")
     male = id("flexRadioDefault2")
-    errorMsg = classes("error"),
-    successIcon = classes("success-icon"),
-    failureIcon = classes("failure-icon");
+    errorMsg = classes("error");
   
     form.addEventListener("submit", (e) => {
       e.preventDefault();
     
       var dayValue = engine1(day, 0, "Enter valid date");
       var monValue = engine2(month, 1, "Enter valid month");
-      var yearValue = engine3(year, 2, "Enter valid year from 1000AD");
+      var yearValue = engine3(year, 2, "Enter valid year");
       var genValue = engine4(gender, 3, "Select Gender");
 
-      // pictureController.classList.add("hide")
+      //---------- entry variables -----------
+      var weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thrusday","Friday","Saturday"]
+      var weekDaysAkan = ["Kwasiada","Dwoada","Benada","Wukuada","Yawoada","Fiada","Memeneda"]
+      var maleNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"]
+      var femaleNames = ["Akosua","Awoa","Abenaa","Akua","Yaa","Afua","Ama"]
 
+     
+      // formula not working correctly switched to getDay() inbuilt in javascript
       // var d = ((((parseInt(yearValue.substr(0,2))/4)-2*parseInt(yearValue.substr(0,2))-1)+((5*parseInt(yearValue.substr(2,2))/4))+((26*(parseInt(monValue)+1)/10))+parseInt(dayValue)) % 7 )
-      console.log(d)
       
-      var fullDate = monValue+"/"+dayValue+"/"+yearValue
-      
+      // -------------- date variables -------------
+      var fullDate = monValue+"/"+dayValue+"/"+yearValue;
+      const d = new Date(fullDate);
+      var dayIndex = d.getDay();
+      console.log(genValue);
 
-      const f = new Date(fullDate)
-      var dayy = f.getDay()
-      console.log(dayy)
+      for(var i = 0;  i < weekDays.length; i++){
+        if (i === dayIndex && genValue === "female"){
+          var wd = weekDays[i].toUpperCase();
+          var wda = weekDaysAkan[i].toUpperCase();
+          var fn = femaleNames[i];
+          contentController.classList.remove("hide");
+          pictureController.classList.add("hide");
+        return document.querySelector(".day-tag").innerHTML = wd,
+         document.querySelector(".dayAkan").innerHTML = wda,
+         document.querySelector(".name-tag").innerHTML = fn;
+        }
+        else if (i === dayIndex && genValue === "male"){
+          var wd = weekDays[i].toUpperCase();
+          var wda = weekDaysAkan[i].toUpperCase();
+          var mn = maleNames[i];
+          contentController.classList.remove("hide");
+          pictureController.classList.add("hide");
+        return document.querySelector(".day-tag").innerHTML = wd,
+         document.querySelector(".dayAkan").innerHTML = wda,
+         document.querySelector(".name-tag").innerHTML = mn;
+        }
+      }
+
     });
   
     var engine1 = (id, serial, message) => {
