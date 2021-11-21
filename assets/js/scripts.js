@@ -103,6 +103,22 @@ submitButton.addEventListener('click', function(event){
       var maleNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"]
       var femaleNames = ["Akosua","Awoa","Abenaa","Akua","Yaa","Afua","Ama"]
 
+      var maleMeaning = ["Kwasi is used to depict the day God descended, the day God began to create, it is regarded as the 1st Day. Essentially, the name marks the creating prowess of God, the beginning of it all!",
+      "Kwadwo highlights the second day of creation, the day God made the firmament or sky, so the day means ‘Lord of Life firmament day’ and so does Kwadwo.",
+      "The name brings to focus the the 3rd day in the creation story, Tuesday also further known as (Benada, Beda or Beneada), is the day God created dry land. Koyabeneda or Kwabenada commonly used for males and also known as Kwabena means ‘The Lord of Life’s day of the land’.",
+      "Kwaku means Lord of Life’s host, which highlights the fourth day of creation, the day God adorned the skies with the moon, sun and stars. Originally the day was pronounced Wikuda or Yukuda, which means ‘day of the heavenly hosts’.",
+      "Yaw together with the names Yaa/Aya, Yaw/Yao, Aya/Awo, Kwawo and Kwaw all represent the belief the Akans hold about God creating life on the 5th day when God made animals of various kinds and plants so the day means the day life began.",
+      "The name is a testament to God’s creation of ‘the home where the idea of a home for humans came to fruition on the 6th day. The day is fully called Kwaofida; Fiada is an abridged version that translates to ‘Lord of Life’s home day’. It also symbolises God’s creation of the institution of marriage and the endorsement of the concept of two people finding each other. So, Kofi has the meaning as ‘Lord of Life home’.",
+      "The name symbolizes the day God completed creation and took a rest, the Sabbath the day of God’s satisfaction. So, the name denotes and commemorates the day God rested. This is why the day is separated as a day of rest, sabbath, a practice that has gone on for generations."]
+
+      var femaleMeaning = ["Akosua also know as ESI is used to depict the day God descended, the day God began to create, it is regarded as the 1st Day. Essentially, the name marks the creating prowess of God, the beginning of it all!",
+      "Adwo highlights the second day of creation, the day God made the firmament or sky, so the day means ‘Lord of Life firmament day’ and so does Kwadwo.",
+      "Also known as Abena means ‘the land’s day’, the name brings to focus the the 3rd day in the creation story, Tuesday also further put as (Benada, Beda or Beneada), is the day God created dry land.",
+      "Akua celebrates the creation of the heavenly bodies, which highlights the fourth day of creation, the day God adorned the skies with the moon, sun and stars. Originally the day was pronounced Wikuda or Yukuda, which means ‘day of the heavenly hosts’.",
+      "Yaa together with the names Yaa/Aya, Yaw/Yao, Aya/Awo, Kwawo and Kwaw all represent the belief the Akans hold about God creating life on the 5th day when God made animals of various kinds and plants so the day means the day life began.",
+      "Afua also Afia, is a name testament to God’s creation of ‘the home where the idea of a home for humans came to fruition on the 6th day. The day is fully called Kwaofida; Fiada is a bridged version that translates to ‘Lord of Life’s home day’. It also symbolises God’s creation of the institution of marriage and the endorsement of the concept of two people finding each other. So, Afia has the meaning as ‘Lord of Life home’.",
+      "The name symbolizes the day God completed creation and took a rest, the Sabbath the day of God’s satisfaction. So, the name denotes and commemorates the day God rested. This is why the day is separated as a day of rest, sabbath, a practice that has gone on for generations."]
+
      
       // formula not working correctly switched to getDay() inbuilt in javascript
       // var d = ((((parseInt(yearValue.substr(0,2))/4)-2*parseInt(yearValue.substr(0,2))-1)+((5*parseInt(yearValue.substr(2,2))/4))+((26*(parseInt(monValue)+1)/10))+parseInt(dayValue)) % 7 )
@@ -111,28 +127,32 @@ submitButton.addEventListener('click', function(event){
       var fullDate = monValue+"/"+dayValue+"/"+yearValue;
       const d = new Date(fullDate);
       var dayIndex = d.getDay();
-      console.log(genValue);
+      
 
       for(var i = 0;  i < weekDays.length; i++){
         if (i === dayIndex && genValue === "female"){
           var wd = weekDays[i].toUpperCase();
           var wda = weekDaysAkan[i].toUpperCase();
           var fn = femaleNames[i];
+          var fm = femaleMeaning[i];
           contentController.classList.remove("hide");
           pictureController.classList.add("hide");
         return document.querySelector(".day-tag").innerHTML = wd,
          document.querySelector(".dayAkan").innerHTML = wda,
-         document.querySelector(".name-tag").innerHTML = fn;
+         document.querySelector(".name-tag").innerHTML = fn,
+         document.querySelector(".meaning-tag").innerHTML = fm;
         }
         else if (i === dayIndex && genValue === "male"){
           var wd = weekDays[i].toUpperCase();
           var wda = weekDaysAkan[i].toUpperCase();
           var mn = maleNames[i];
+          var mm = maleMeaning[i];
           contentController.classList.remove("hide");
           pictureController.classList.add("hide");
         return document.querySelector(".day-tag").innerHTML = wd,
          document.querySelector(".dayAkan").innerHTML = wda,
-         document.querySelector(".name-tag").innerHTML = mn;
+         document.querySelector(".name-tag").innerHTML = mn,
+         document.querySelector(".meaning-tag").innerHTML = mm;
         }
       }
 
