@@ -58,9 +58,11 @@ mainTitle.style.position = "absolute";
 mainTitle.style.top = "40%";
 mainTitle.style.marginLeft = "20px";
 mainTitle.style.marginRight = "20px";
-mainTitle.style.color = "#1dbf74";
+mainTitle.style.color = "#6b6969";
 mainTitle.style.textAlign = "center";
-mainTitle.style.fontWeight = "bold";
+mainTitle.style.fontWeight = "600";
+mainTitle.style.fontFamily = "'Amatic SC', cursive";
+mainTitle.style.fontSize = "30px";
 
 var contentController = document.querySelector("#content-box");
 contentController.classList.add("hide");

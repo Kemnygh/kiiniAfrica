@@ -119,7 +119,7 @@ input::placeholder {
 .name-tag{
   font-size: 40px;
   font-weight: bold;
-  color: rgb(107, 105, 105);
+  color: #6b6969;
 }
 
 .bi-check2-circle{
@@ -159,6 +159,16 @@ input::placeholder {
 .adopted-tag{
   font-size: 14px;
   color: grey;
+}
+
+.annotation{
+  font-size: 13px;
+  background-color: rgb(223, 219, 219);
+  top: 90%;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  color: #6b6969;
 }
 
 #alert-day, #alert-month, #alert-year, #alert-radio{
