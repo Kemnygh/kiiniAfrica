@@ -1,7 +1,6 @@
 // prompt("name")
 genderImage()
 coverImage()
-validation()
 
 
 
@@ -77,15 +76,13 @@ contentController.classList.add("hide")
 var submitButton = document.querySelector(".btn");
 
 submitButton.addEventListener('click', function(event){
-  // contentController.classList.remove("hide")
-  // pictureController.classList.add("hide")
+  contentController.classList.remove("hide")
+  pictureController.classList.add("hide")
 })
 
 
+//--------------------- validation --------------
 
-}
-
-function validation(){
   var id = (id) => document.getElementById(id);
   
   var classes = (classes) => document.getElementsByClassName(classes);
@@ -104,27 +101,33 @@ function validation(){
     form.addEventListener("submit", (e) => {
       e.preventDefault();
     
-      engine1(day, 0, "Enter valid date");
-      engine2(month, 1, "Enter valid month");
-      engine3(year, 2, "Enter valid year");
-      engine4(gender, 3, "Select Gender");
+      var dayValue = engine1(day, 0, "Enter valid date");
+      var monValue = engine2(month, 1, "Enter valid month");
+      var yearValue = engine3(year, 2, "Enter valid year from 1000AD");
+      var genValue = engine4(gender, 3, "Select Gender");
+
+      // pictureController.classList.add("hide")
+
+      // var d = ((((parseInt(yearValue.substr(0,2))/4)-2*parseInt(yearValue.substr(0,2))-1)+((5*parseInt(yearValue.substr(2,2))/4))+((26*(parseInt(monValue)+1)/10))+parseInt(dayValue)) % 7 )
+      console.log(d)
+      
+      var fullDate = monValue+"/"+dayValue+"/"+yearValue
+      
+
+      const f = new Date(fullDate)
+      var dayy = f.getDay()
+      console.log(dayy)
     });
   
     var engine1 = (id, serial, message) => {
       if ((id.value < 1 || id.value > 31 || isNaN(id.value)) && serial === 0) {
         errorMsg[serial].innerHTML = message;
         id.style.border = "2px solid red";  
-        // // icons
-        // failureIcon[serial].style.opacity = "1";
-        // successIcon[serial].style.opacity = "0";
       } else {
         errorMsg[serial].innerHTML = "";
         id.style.border = "2px solid green";
-        console.log(id.value);
-    
-        // icons
-        // failureIcon[serial].style.opacity = "0";
-        // successIcon[serial].style.opacity = "1";
+        return id.value;
+        // console.log(id.value);
       }
     };
   
@@ -132,68 +135,48 @@ function validation(){
       if ((id.value < 1 || id.value > 12 || isNaN(id.value)) && serial === 1) {
         errorMsg[serial].innerHTML = message;
         id.style.border = "2px solid red";  
-        // // icons
-        // failureIcon[serial].style.opacity = "1";
-        // successIcon[serial].style.opacity = "0";
       } else {
         errorMsg[serial].innerHTML = "";
         id.style.border = "2px solid green";
-    
-        // icons
-        // failureIcon[serial].style.opacity = "0";
-        // successIcon[serial].style.opacity = "1";
+        return id.value;
       }
     };
+
     var engine3 = (id, serial, message) => {
       if ((id.value < 1 || id.value > 3500 || isNaN(id.value)) && serial === 2) {
         errorMsg[serial].innerHTML = message;
         id.style.border = "2px solid red";  
-        // // icons
-        // failureIcon[serial].style.opacity = "1";
-        // successIcon[serial].style.opacity = "0";
       } else {
         errorMsg[serial].innerHTML = "";
         id.style.border = "2px solid green";
-    
-        // icons
-        // failureIcon[serial].style.opacity = "0";
-        // successIcon[serial].style.opacity = "1";
+        return id.value;
       }
     };
+
     var engine4 = (id, serial, message) => {
       if ((!female.checked && !male.checked) && serial === 3) {
         errorMsg[serial].innerHTML = message;
         male.style.border = "2px solid red";
-        female.style.border = "2px solid red";    
-        // console.log(male.value);
-        // // icons
-        // failureIcon[serial].style.opacity = "1";
-        // successIcon[serial].style.opacity = "0";
+        female.style.border = "2px solid red";   
       } 
       else if (female.checked  && serial === 3) {
         errorMsg[serial].innerHTML = "";
         male.style.border = "";
-        female.style.border = "";  
-        // console.log(male.checked.value); 
+        female.style.border = ""; 
+        return female.value; 
         console.log(female.value); 
-    
-        // icons
-        // failureIcon[serial].style.opacity = "0";
-        // successIcon[serial].style.opacity = "1";
       }
       else if (male.checked  && serial === 3) {
         errorMsg[serial].innerHTML = "";
         male.style.border = "";
         female.style.border = "";  
-        // console.log(male.checked.value); 
+        return male.value;
         console.log(male.value); 
-    
-        // icons
-        // failureIcon[serial].style.opacity = "0";
-        // successIcon[serial].style.opacity = "1";
       }
     };
-    return this
+
+  
+    
   }
 
 
