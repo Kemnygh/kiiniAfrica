@@ -2,8 +2,7 @@
 genderImage()
 coverImage()
 
-
-
+// -------------- gender image to change with radio selction -------------
 function genderImage(){
 var imageparent = document.querySelector("#img-box");
 var m_image = document.createElement('img');
@@ -29,6 +28,8 @@ m_image.style.maxWidth = "100%";
 m_image.style.maxHeight = "247px";
 }
 
+
+// ------------------ valdiation of pane to hold welcome image or show name and definition ---------
 function coverImage(){
 var secondimage = document.querySelector("#main-right");
 var pictureController = document.createElement('div');
@@ -40,8 +41,8 @@ pictureController.appendChild(mainTitle);
 
 
 
-var c_img = cover_image.src = "./assets/images/cover-img.png";
-var text_input = mainTitle.textContent = "Welcome to the Akan Names App enter your birthdate, choose gender and submit to see what could be your akan name."
+cover_image.src = "./assets/images/cover-img.png";
+mainTitle.textContent = "Welcome to the Akan Names App enter your birthdate, choose gender and submit to see what could be your akan name."
 
 
 
@@ -69,27 +70,20 @@ contentController.classList.add("hide");
 
 
 
-var submitButton = document.querySelector(".btn");
-
-submitButton.addEventListener('click', function(event){
-  
-})
-
-
 //--------------------- validation --------------
 
   var id = (id) => document.getElementById(id);
   
   var classes = (classes) => document.getElementsByClassName(classes);
   
-  var day = id("day"),
-    month = id("month"),
-    year = id("year"),
-    form = id("main-left"),
-    gender = id("gender"),
-    female = id("flexRadioDefault1")
-    male = id("flexRadioDefault2")
-    errorMsg = classes("error");
+  var day = id("day");
+  var month = id("month");
+  var year = id("year");
+  var form = id("main-left");
+  var gender = id("gender");
+  var female = id("flexRadioDefault1");
+  var male = id("flexRadioDefault2");
+  var errorMsg = classes("error");
   
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -113,7 +107,7 @@ submitButton.addEventListener('click', function(event){
       "The name is a testament to God’s creation of ‘the home where the idea of a home for humans came to fruition on the 6th day. The day is fully called Kwaofida; Fiada is an abridged version that translates to ‘Lord of Life’s home day’. It also symbolises God’s creation of the institution of marriage and the endorsement of the concept of two people finding each other. So, Kofi has the meaning as ‘Lord of Life home’.",
       "The name symbolizes the day God completed creation and took a rest, the Sabbath the day of God’s satisfaction. So, the name denotes and commemorates the day God rested. This is why the day is separated as a day of rest, sabbath, a practice that has gone on for generations."]
 
-      var femaleMeaning = ["Akosua also know as ESI is used to depict the day God descended, the day God began to create, it is regarded as the 1st Day. Essentially, the name marks the creating prowess of God, the beginning of it all!",
+      var femaleMeaning = ["Akosua also known as ESI is used to depict the day God descended, the day God began to create, it is regarded as the 1st Day. Essentially, the name marks the creating prowess of God, the beginning of it all!",
       "Adwo highlights the second day of creation, the day God made the firmament or sky, so the day means ‘Lord of Life firmament day’ and so does Kwadwo.",
       "Also known as Abena means ‘the land’s day’, the name brings to focus the the 3rd day in the creation story, Tuesday also further put as (Benada, Beda or Beneada), is the day God created dry land.",
       "Akua celebrates the creation of the heavenly bodies, which highlights the fourth day of creation, the day God adorned the skies with the moon, sun and stars. Originally the day was pronounced Wikuda or Yukuda, which means ‘day of the heavenly hosts’.",
@@ -131,6 +125,7 @@ submitButton.addEventListener('click', function(event){
       var dayIndex = d.getDay();
       
 
+      // ----------------- check & attribute population algorithm--------
       for(var i = 0;  i < weekDays.length; i++){
         if (i === dayIndex && genValue === "female"){
           var wd = weekDays[i].toUpperCase();
@@ -159,7 +154,8 @@ submitButton.addEventListener('click', function(event){
       }
 
     });
-  
+    
+    // --------------- validation functions ---------
     var engine1 = (id, serial, message) => {
       if ((id.value < 1 || id.value > 31 || isNaN(id.value)) && serial === 0) {
         errorMsg[serial].innerHTML = message;
@@ -168,7 +164,6 @@ submitButton.addEventListener('click', function(event){
         errorMsg[serial].innerHTML = "";
         id.style.border = "2px solid green";
         return id.value;
-        // console.log(id.value);
       }
     };
   
@@ -184,7 +179,7 @@ submitButton.addEventListener('click', function(event){
     };
 
     var engine3 = (id, serial, message) => {
-      if ((id.value < 1 || id.value > 3500 || isNaN(id.value)) && serial === 2) {
+      if ((id.value < 1 || isNaN(id.value)) && serial === 2) {
         errorMsg[serial].innerHTML = message;
         id.style.border = "2px solid red";  
       } else {
@@ -205,19 +200,15 @@ submitButton.addEventListener('click', function(event){
         male.style.border = "";
         female.style.border = ""; 
         return female.value; 
-        console.log(female.value); 
       }
       else if (male.checked  && serial === 3) {
         errorMsg[serial].innerHTML = "";
         male.style.border = "";
         female.style.border = "";  
         return male.value;
-        console.log(male.value); 
       }
     };
 
-  
-    
   }
 
 
