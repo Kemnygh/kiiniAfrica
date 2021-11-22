@@ -35,15 +35,14 @@ var secondimage = document.querySelector("#main-right");
 var pictureController = document.createElement('div');
 secondimage.appendChild(pictureController);
 var cover_image = document.createElement('img');
-var mainTitle = document.createElement("p");
+var mainTitle = document.createElement("img");
 pictureController.appendChild(cover_image);
 pictureController.appendChild(mainTitle);
 
 
 
 cover_image.src = "./assets/images/cover-img.png";
-mainTitle.textContent = "Welcome to the Akan Names App enter your birthdate, choose gender and submit to see what could be your akan name."
-
+mainTitle.src = "./assets/images/logo.png";
 
 
 pictureController.style.marginTop = "40px";
@@ -52,18 +51,15 @@ pictureController.style.maxWidth = "100%";
 pictureController.style.maxHeight = "100%";
 cover_image.style.maxWidth = "100%";
 cover_image.style.maxHeight = "100%";
-cover_image.style.opacity = "0.2";
+cover_image.style.opacity = "0.3";
 cover_image.style.borderRadius = "10px";
+cover_image.style.position = "relative";
 pictureController.style.position = "relative";
 mainTitle.style.position = "absolute";
-mainTitle.style.top = "40%";
+mainTitle.style.top = "50%";
+mainTitle.style.left = "5%"
 mainTitle.style.marginLeft = "20px";
-mainTitle.style.marginRight = "20px";
-mainTitle.style.color = "#6b6969";
-mainTitle.style.textAlign = "center";
-mainTitle.style.fontWeight = "600";
-mainTitle.style.fontFamily = "'Amatic SC', cursive";
-mainTitle.style.fontSize = "30px";
+mainTitle.style.maxWidth = "80%";
 
 var contentController = document.querySelector("#content-box");
 contentController.classList.add("hide");
@@ -127,7 +123,7 @@ contentController.classList.add("hide");
 
       // ----------------- check & attribute population algorithm--------
       for(var i = 0;  i < weekDays.length; i++){
-        if (i === dayIndex && genValue === "female"){
+        if (i === dayIndex && genValue === "female" && (dayValue >1 || monValue >1)){
           var wd = weekDays[i].toUpperCase();
           var wda = weekDaysAkan[i].toUpperCase();
           var fn = femaleNames[i];
@@ -139,7 +135,7 @@ contentController.classList.add("hide");
          document.querySelector(".name-tag").innerHTML = fn,
          document.querySelector(".meaning-tag").innerHTML = fm;
         }
-        else if (i === dayIndex && genValue === "male"){
+        else if (i === dayIndex && genValue === "male" && (dayValue >1 || monValue >1)){
           var wd = weekDays[i].toUpperCase();
           var wda = weekDaysAkan[i].toUpperCase();
           var mn = maleNames[i];
