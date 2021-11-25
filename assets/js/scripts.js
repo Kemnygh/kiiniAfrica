@@ -51,6 +51,7 @@ pictureController.style.maxWidth = "100%";
 pictureController.style.maxHeight = "100%";
 cover_image.style.maxWidth = "100%";
 cover_image.style.maxHeight = "100%";
+cover_image.style.objectFit = "fill"
 cover_image.style.opacity = "0.3";
 cover_image.style.borderRadius = "10px";
 cover_image.style.position = "relative";
@@ -130,6 +131,7 @@ contentController.classList.add("hide");
           var fm = femaleMeaning[i];
           contentController.classList.remove("hide");
           pictureController.classList.add("hide");
+          form.reset();
         return document.querySelector(".day-tag").innerHTML = wd,
          document.querySelector(".dayAkan").innerHTML = wda,
          document.querySelector(".name-tag").innerHTML = fn,
@@ -142,6 +144,7 @@ contentController.classList.add("hide");
           var mm = maleMeaning[i];
           contentController.classList.remove("hide");
           pictureController.classList.add("hide");
+          form.reset();
         return document.querySelector(".day-tag").innerHTML = wd,
          document.querySelector(".dayAkan").innerHTML = wda,
          document.querySelector(".name-tag").innerHTML = mn,
@@ -206,5 +209,3 @@ contentController.classList.add("hide");
     };
 
   }
-
-

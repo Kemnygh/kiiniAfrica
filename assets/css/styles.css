@@ -178,9 +178,14 @@ input::placeholder {
   font-weight: bold;
 }
 
+.tx-tag{
+  margin-bottom: 10px;
+}
+
 .title-m-tag{
   font-size: 13px;
   color: grey;
+  margin-bottom: 10px;
 }
 
 .meaning-tag{
@@ -193,7 +198,7 @@ input::placeholder {
 }
 
 .annotation{
-  font-size: 13px;
+  font-size: 11px;
   background-color: rgb(243, 239, 239);
   top: 90%;
   border-radius: 5px;
@@ -202,3 +207,7 @@ input::placeholder {
   color: #8d8a8a;
 }
 
+#reset{
+  margin: 0 0 10px 0;
+  float: right;
+}
